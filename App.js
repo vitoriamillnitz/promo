@@ -3,6 +3,16 @@ import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'reac
 import { useState } from 'react'
 import Botao from './src/components/Botao'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import { PaperProvider, MD3LightTheme as DefaultTheme } from 'react-native-paper'
+
+const theme = {
+  ...DefaultTheme,
+  colors:{
+    primary: "tomato",
+    secondary: "yellow"
+  }
+}
+
 
 
 //Definição
@@ -32,6 +42,7 @@ const App = () => {
   }
 
   return (
+    <PaperProvider theme={theme}>
     <View style={estilos.view}>
 
 
@@ -58,6 +69,7 @@ const App = () => {
         <Text style={estilos.resultado}>{txtImc}</Text>
       </View>
     </View>
+    </PaperProvider>
   )
 }
 
