@@ -1,9 +1,11 @@
 //Importação
-import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import { useState } from 'react'
 import Botao from './src/components/Botao'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { PaperProvider, MD3LightTheme as DefaultTheme } from 'react-native-paper'
+import { TextInput } from 'react-native-paper'
+
 
 const theme = {
   ...DefaultTheme,
@@ -44,21 +46,19 @@ const App = () => {
   return (
     <PaperProvider theme={theme}>
     <View style={estilos.view}>
-
-
-    <Icon name="home" size={60} color="#000000" />
-
       <View style={estilos.cImage}>
-        <Image style={estilos.imagem} source={{ uri: 'https://hips.hearstapps.com/hmg-prod/images/1076/bmi-myths-main-1515702962.jpg' }} />
+      <Icon name="home" size={60} color="#000000" />
       </View>
 
       <View style={estilos.cInput}>
 
-        <Text style={estilos.texto}>Peso:</Text>
-        <TextInput style={estilos.textInput} value={txtPeso} onChangeText={setPeso} />
+        <TextInput
+          label="Peso"
+          value={txtPeso}
+          onChangeText={setPeso}
+        />
 
-        <Text style={estilos.texto}>Altura:</Text>
-        <TextInput style={estilos.textInput} value={txtAltura} onChangeText={setAltura} />
+
       </View>
 
       <View style={estilos.cBotoes}>
