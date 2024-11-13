@@ -9,7 +9,8 @@ import { TextInput } from 'react-native-paper'
 
 const theme = {
   ...DefaultTheme,
-  colors:{
+  colors: {
+    ...DefaultTheme.colors,
     primary: "tomato",
     secondary: "yellow"
   }
@@ -53,9 +54,20 @@ const App = () => {
       <View style={estilos.cInput}>
 
         <TextInput
+        style={estilos.textInput}
           label="Peso"
           value={txtPeso}
           onChangeText={setPeso}
+          placeholder='lalal'
+        />
+
+<TextInput
+        style={estilos.textInput}
+
+          label="Altura"
+          value={txtAltura}
+          onChangeText={setAltura}
+          placeholder='lalal'
         />
 
 
@@ -90,10 +102,11 @@ const estilos = StyleSheet.create({
 
   },
   textInput: {
+    marginTop: 10,
     fontSize: 36,
     borderWidth: 1,
     borderColor: 'gray',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: 'blue',
     color: '#F15025'
   },
   cImage: {
