@@ -2,6 +2,8 @@
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import { useState } from 'react'
 import Botao from './src/components/Botao'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+
 
 //Definição
 const App = () => {
@@ -31,6 +33,9 @@ const App = () => {
 
   return (
     <View style={estilos.view}>
+
+
+    <Icon name="home" size={60} color="#000000" />
 
       <View style={estilos.cImage}>
         <Image style={estilos.imagem} source={{ uri: 'https://hips.hearstapps.com/hmg-prod/images/1076/bmi-myths-main-1515702962.jpg' }} />
