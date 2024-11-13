@@ -68,7 +68,8 @@ const estilos = StyleSheet.create({
   },
   texto: {
     fontSize: 36,
-    color: '#F15025'
+    color: '#F15025',
+    fontFamily: 'AveriaLibre-Regular'
 
   },
   textInput: {
