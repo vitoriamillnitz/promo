@@ -8,7 +8,7 @@ const Stack = createStackNavigator()
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Login" screenOptions={{headerTintColor: 'bluse', headerTitle: 'teste', headerStyle: {backgroundColor: 'gray'}}}>
       <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
       <Stack.Screen name="Calculadora" component={Calculadora}/>
       </Stack.Navigator>

@@ -19,7 +19,7 @@ const theme = {
 
 
 //Definição
-const Calculadora = () => {
+const Calculadora = (props) => {
 
   const [txtPeso, setPeso] = useState('')
   const [txtAltura, setAltura] = useState('')
@@ -42,6 +42,11 @@ const Calculadora = () => {
     setAltura('')
     setPeso('')
     setIMC('')
+  }
+
+  const voltar = () => {
+    props.navigation.navigate('Login')
+
   }
 
   return (
@@ -77,6 +82,8 @@ const Calculadora = () => {
         <Botao texto="Calcular" funcao={calcularIMC} />
 
         <Botao texto="Limpar" funcao={limpar} />
+        <Botao texto="Volta" funcao={voltar} />
+
 
         <Text style={estilos.resultado}>{txtImc}</Text>
       </View>
