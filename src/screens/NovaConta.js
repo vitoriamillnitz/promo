@@ -1,38 +1,24 @@
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import { useState } from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-
-function validarEmail(email) {
-    const valida = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    return valida.test(email);
-}
 
 const Login = (props) => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    const [repet, setRepet] = useState('');
     const [erro, setErro] = useState('');
 
     const irPara = () => {
-        if (!validarEmail(email)) {
-            setErro('E-mail e/ou senha inválidos.');
+        if (senha !== repet) {
+            setErro('O campo repetir senha difere da senha');
         } else {
             setErro('');
-            props.navigation.navigate('Home');
+            props.navigation.navigate('Login');
         }
     };
 
     return (
         <View style={estilos.view}>
-            <View style={estilos.container}>
-                <View style={estilos.viewTitulo}>
-                    <Text style={estilos.titulo}>Satisfying.you</Text>
-                </View>
-                <View style={estilos.viewIcon}>
-                    <Icon name="sentiment-satisfied" size={32} color="#FFFFFF" />
-                </View>
-            </View>
-
             <View style={estilos.textContainer}>
                 <Text style={estilos.tituloInput}>E-mail</Text>
                 <TextInput
@@ -53,6 +39,7 @@ const Login = (props) => {
                 <TextInput
                     value={senha}
                     onChangeText={setSenha}
+                    secureTextEntry={true}
                     style={estilos.textInput}
                     mode="outlined"
                     theme={{
@@ -63,25 +50,27 @@ const Login = (props) => {
                         },
                     }}
                 />
-                <View style={{
-                    height: 30, width: '100%'}}>
+                <Text style={estilos.tituloInput}>Repetir senha</Text>
+                <TextInput
+                    value={repet}
+                    onChangeText={setRepet}
+                    secureTextEntry={true}
+                    style={estilos.textInput}
+                    mode="outlined"
+                    theme={{
+                        colors: {
+                            primary: '#3F92C5',
+                            background: 'white',
+                            placeholder: '#3F92C5',
+                        },
+                    }}
+                />
+                <View style={{ height: 30, width: '100%' }}>
                     {erro ? <Text style={estilos.erroText}>{erro}</Text> : null}
                 </View>
             </View>
-            <TouchableOpacity
-                onPress={irPara}
-                style={estilos.botaoE}>
-                <Text style={estilos.botaoText}>Entrar</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                onPress={() => props.navigation.navigate('NovaConta')}
-                style={estilos.botaoC}>
-                <Text style={estilos.botaoText}>Criar minha conta</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                onPress={() => props.navigation.navigate('RecuperarSenha')}
-                style={estilos.botaoR}>
-                <Text style={estilos.botaoText}>Esqueci minha senha</Text>
+            <TouchableOpacity onPress={irPara} style={estilos.botaoE}>
+                <Text style={estilos.botaoText}>CADASTRAR</Text>
             </TouchableOpacity>
         </View>
     );
@@ -96,30 +85,10 @@ const estilos = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    container: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: 5,
-        marginTop: 10,
-    },
-    viewTitulo: {
-        alignItems: 'center',
-    },
-    viewIcon: {
-        marginLeft: 20,
-    },
-    titulo: {
-        fontFamily: 'AveriaLibre-Regular',
-        fontSize: 32,
-        fontWeight: '400',
-        lineHeight: 30,
-        color: '#FFFFFF',
-        textAlign: 'center',
-    },
     textContainer: {
         width: '70%',
         alignItems: 'center',
+        marginTop: 20,
     },
     textInput: {
         width: '100%',
@@ -134,7 +103,6 @@ const estilos = StyleSheet.create({
         textAlign: 'left',
         marginBottom: 1,
         width: '100%',
-
     },
     botaoE: {
         width: '70%',
@@ -149,24 +117,6 @@ const estilos = StyleSheet.create({
         fontSize: 17,
         color: '#FFFFFF',
         textAlign: 'center',
-    },
-    botaoC: {
-        width: '70%',
-        height: 22,
-        marginBottom: 3,
-        marginTop: 19,
-        backgroundColor: '#3F92C5',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    botaoR: {
-        width: '70%',
-        height: 22,
-        marginBottom: 7,
-        marginTop: 3,
-        backgroundColor: '#B0B0B0',
-        justifyContent: 'center',
-        alignItems: 'center',
     },
     erroText: {
         fontFamily: 'AveriaLibre-Regular',
