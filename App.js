@@ -9,8 +9,9 @@ import AcaoPesquisa from "./src/screens/AcaoPesquisa";
 import RecuperarSenha from "./src/screens/RecuperarSenha";
 import Home from "./src/screens/Home";
 import Drawer from "./src/screens/Drawer";
-import ModPesquisa from "./src/screens/ModPesquisa";
+import ModPesquisas from "./src/screens/ModPesquisas";
 import Relatorio from "./src/screens/Relatorio";
+
 
 const Stack = createStackNavigator();
 
@@ -61,7 +62,12 @@ const App = () => {
             headerTitleStyle: { fontFamily: 'AveriaLibre-Regular', fontSize: 33, color: '#FFFFFF' },
           }}
         />
-        <Stack.Screen name="ModPesquisa" component={ModPesquisa} options={{ headerShown: false }} />
+        <Stack.Screen name="ModPesquisas" component={ModPesquisas} options={{
+            headerTintColor: '#573FBA',
+            headerTitle: 'Modificar Pesquisa',
+            headerStyle: { backgroundColor: '#2B1D62' },
+            headerTitleStyle: { fontFamily: 'AveriaLibre-Regular', fontSize: 33, color: '#FFFFFF' },
+          }} />
         <Stack.Screen name="Relatorio" component={Relatorio} options={{
             headerTintColor: '#573FBA',
             headerTitle: 'Relatorio',

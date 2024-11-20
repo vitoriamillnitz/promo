@@ -4,8 +4,8 @@ import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const AcaoPesquisa = (props) => {
 
-    const goToModificarPesquisa = () =>{
-        props.navigation.navigate('ModPesquisa')
+    const goToModificarPesquisas = () =>{
+        props.navigation.navigate('ModPesquisas')
     }
 
     const goToColetarDados = () => {
@@ -20,7 +20,7 @@ const AcaoPesquisa = (props) => {
         <View style={estilos.view}>
 
             <View style={estilos.container}>
-                <TouchableOpacity style={estilos.botao} onPress={goToModificarPesquisa}>
+                <TouchableOpacity style={estilos.botao} onPress={goToModificarPesquisas}>
                     <Icon2 name='file-document-edit-outline' size={60} color='#FFFFFF'/>
                     <Text style={estilos.texto}>Modificar</Text>
                 </TouchableOpacity>
