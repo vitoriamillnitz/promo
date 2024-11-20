@@ -1,31 +1,24 @@
-import { TextInput, Text, StyleSheet, TouchableOpacity} from "react-native";
+import { TextInput, Text, View, StyleSheet} from "react-native";
 
+const Input = (props) => {
 
-const Botao = (props) => {
-
-    const texto = props.titulo;
-    const cor = props.cor;
-    const marginBot = props.marginBot;
-    const height = props.height;
-    const pressFunc = props.pressFunc;
+    const titulo = props.titulo;
+    const placeholder = props.placeholder;
+    const msgErro = props.msgErro;
 
     return(
-        <TouchableOpacity onPress={pressFunc} style={[estiloBot.container, { backgroundColor: cor, marginBottom: marginBot, height: height}]}>
-            <Text style={estiloBot.textBotao}>{texto}</Text>
-        </TouchableOpacity>
+        <View style={estiloInp.container}>
+            <Text style={estiloInp.text}>{titulo}</Text>
+            <TextInput  placeholder={placeholder} style={estiloInp.textInput} onChangeText={props.onChangeText}/>
+            <Text style={estiloInp.textErro}>{msgErro}</Text>
+        </View>
     )
 }
 
-const estiloBot = StyleSheet.create({
+const estiloInp = StyleSheet.create({
     container: {
         width: '70%',
-        justifyContent: 'center',
-        alignItems:'center'
-    },
-    textBotao:{
-        fontSize: 20,
-        color:'white',
-        textAlign:'center'
+        marginBottom: 20
     },
     image: {
         width: 200,
@@ -124,4 +117,5 @@ const estiloBot = StyleSheet.create({
     },
 })
 
-export default Botao
+
+export default Input

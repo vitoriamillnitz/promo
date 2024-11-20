@@ -2,6 +2,8 @@ import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import { useState } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Drawer from './Drawer';
+
 
 function validarEmail(email) {
     const valida = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
