@@ -34,7 +34,7 @@ const App = () => {
           options={{
             headerStyle: { backgroundColor: '#2B1D62' },
             headerTintColor: '#573FBA',
-            headerTitleStyle: { color: '#FFFFFF', fontFamily: 'AveriaLivre-Regular' },
+            headerTitleStyle: { color: '#FFFFFF', fontFamily: 'AveriaLivre-Regular', fontSize: 33, },
           }}
         />
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />

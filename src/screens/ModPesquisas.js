@@ -51,13 +51,14 @@ const ModPesquisas = (props) => {
                             placeholder: '#3F92C5',
                         },
                     }}
+                    right={<TextInput.Icon icon="calendar"/>}
+
                 />
 
                 <Text style={estilos.texto}>Imagem</Text>
                 <TextInput
                     style={estilos.inputImage}
                     mode="outlined"
-                    placeholder="Câmera/Galeria de imagens"
                     theme={{
                         colors: {
                             primary: '#3F92C5',
@@ -65,6 +66,7 @@ const ModPesquisas = (props) => {
                             placeholder: '#3F92C5',
                         },
                     }}
+                    left={<TextInput.Icon icon="party-popper"/>}
                 />
             </View>
 
@@ -100,6 +102,7 @@ const ModPesquisas = (props) => {
 };
 
 const estilos = StyleSheet.create({
+    
     view: {
         padding: 5,
         backgroundColor: '#372775',
@@ -143,6 +146,7 @@ const estilos = StyleSheet.create({
         width: '50%',
         height: 50,
         backgroundColor: '#FFFFFF',
+        
     },
     iconContainer: {
         position: 'absolute',

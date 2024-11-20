@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity , StyleSheet} from "react-native";
 import { useState } from "react";
 import { TextInput } from "react-native-paper";
-import Icon from 'react-native-vector-icons/MaterialIcons';
+
 
 const NovaPesquisa = (props) => {
     const [txtNome, setNome] = useState('')
@@ -63,6 +63,7 @@ const NovaPesquisa = (props) => {
                             placeholder: '#3F92C5',
                         },
                     }}
+                    right={<TextInput.Icon icon="calendar"/>}
                 />
                 <Text style={estilos.textoErro}>´{erro2}</Text>
 
