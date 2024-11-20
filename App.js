@@ -49,7 +49,7 @@ const App = () => {
         />
         <Stack.Screen name="Coleta" component={Coleta} options={{ headerShown: false }} />
         <Stack.Screen name="Agradecimento" component={Agradecimento} options={{ headerShown: false }} />
-        <Stack.Screen name="Drawer" component={Drawer} />
+        <Stack.Screen name="Drawer" component={Drawer} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
         <Stack.Screen
           name="RecuperarSenha"
@@ -62,7 +62,12 @@ const App = () => {
           }}
         />
         <Stack.Screen name="ModPesquisa" component={ModPesquisa} options={{ headerShown: false }} />
-        <Stack.Screen name="Relatorio" component={Relatorio} options={{ headerShown: false }} />
+        <Stack.Screen name="Relatorio" component={Relatorio} options={{
+            headerTintColor: '#573FBA',
+            headerTitle: 'Relatorio',
+            headerStyle: { backgroundColor: '#2B1D62' },
+            headerTitleStyle: { fontFamily: 'AveriaLibre-Regular', fontSize: 33, color: '#FFFFFF' },
+          }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

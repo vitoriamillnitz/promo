@@ -62,6 +62,7 @@ const estilos = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         width: '100%',
+        
     },
     viewTextInput: {
         flexDirection: 'row',

@@ -5,11 +5,11 @@ import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons'
 const AcaoPesquisa = (props) => {
 
     const goToModificarPesquisa = () =>{
-        props.navigation.navigate('Modificar Pesquisa')
+        props.navigation.navigate('ModPesquisa')
     }
 
     const goToColetarDados = () => {
-        props.navigation.navigate('Coletar Dados')
+        props.navigation.navigate('Coleta')
     }
 
     const goToRelatorio = () => {

@@ -20,7 +20,7 @@ const Login = (props) => {
             setErro('E-mail e/ou senha inválidos.');
         } else {
             setErro('');
-            props.navigation.navigate('Home');
+            props.navigation.navigate('Drawer');
         }
     };
 

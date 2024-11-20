@@ -82,7 +82,7 @@ const NovaPesquisa = (props) => {
             
             </View>
 
-            <TouchableOpacity style={estilos.botao} onPress={goToAcao}>
+            <TouchableOpacity style={estilos.botao} onPress={goToHome}>
                 <Text style={estilos.textoBotao}>CADASTRAR</Text>
             </TouchableOpacity>
         </View>
